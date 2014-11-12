@@ -1,0 +1,11 @@
+The version of MikMod used for development is 3.1.9.  It looks
+like they've incorporated my fixes for the previous version, so
+the only change I've made to the source is:
+
+mdreg.c:
+- comment out
+	_mm_registerdriver(&drv_raw);
+	_mm_registerdriver(&drv_wav);
+
+  to avoid writing giant .raw files if no other sound device
+  is available
